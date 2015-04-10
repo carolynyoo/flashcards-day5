@@ -1,0 +1,28 @@
+<div ng-controller="MainController">
+    <button ng-click="getAllCards()" ng-class="{ active: chosenCategory === 'All' }">All Categories</button>
+
+    <button
+            ng-repeat="category in categories"
+            ng-click="getCategoryCards(category)"
+            ng-class="{ active: chosenCategory === category }">
+        {{ category }}
+    </button>
+    <button ng-click="cheatFilter()">Cheat
+    </button>
+    <button ng-click="getAddForm()">Add New Card</button>
+
+
+    <loader ng-hide="loaded || error"></loader>
+
+    <div ng-show="error">
+        <h2>Failed to get the cards!</h2>
+        <pre>HTTP status: {{error.status}}</pre>
+    </div>
+
+    <div ng-include="'templates/stats.html'">
+    </div>
+    <add-card ng-show="addingNewCard"></add-card>
+
+    <flash-card ng-hide="addingNewCard" card="flashCard" ng-repeat="flashCard in flashCards | orderBy: 'question'"></flash-card>
+
+</div>

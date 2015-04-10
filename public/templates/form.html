@@ -1,0 +1,35 @@
+<div id="addCard">
+	<form name="addFlashCard" ng-submit="addFlashCard.$valid && submit()" novalidate>
+		<pre>{{ newCard | json }}</pre>
+		Question: <input type="text" ng-model="newCard.question" ng-minlength="10" /><br>
+		Category: <select ng-options="category for category in categories" ng-model="newCard.category" required></select><br>
+		Answers 1: <input type="text" ng-model="newCard.answers[0]['text']" required />
+		Correct1?: <input type="radio" 
+								ng-model="newCard.answers[0]['correct']" 
+								data-ng-value="true" name="aone" 
+								>Yes
+							 <input type="radio" 
+							 ng-model="newCard.answers[0]['correct']" 
+							 data-ng-value="false" name="aone"
+							 >No<br>
+		Answers 2: <input type="text" ng-model="newCard.answers[1]['text']" required />
+		Correct2?: <input type="radio" 
+								ng-model="newCard.answers[1]['correct']" 
+								data-ng-value="true" name="atwo" 
+								>Yes
+							 <input type="radio" 
+							 ng-model="newCard.answers[1]['correct']" 
+							 data-ng-value="false" name="atwo" 
+							 >No<br>
+		Answers 3: <input type="text" ng-model="newCard.answers[2]['text']" required />
+		Correct3?: <input type="radio" 
+								ng-model="newCard.answers[2]['correct']" 
+								data-ng-value="true" name="athree" 
+								>Yes
+							 <input type="radio" 
+								ng-model="newCard.answers[2]['correct']" 
+								data-ng-value="false" name="athree" 
+							 >No<br>
+		<button ng-disabled="addFlashCard.$invalid">Submit</button>
+</form>
+</div>

@@ -1,0 +1,21 @@
+<div>
+    <button ng-click="getAll()" ng-class="{ active: chosenCategory === 'All' }">All Categories</button>
+
+    <button 
+            ng-repeat="category in categories"
+            ng-click="getCategory(category)"
+            ng-class="{ active: chosenCategory === category }">
+        {{ category }}
+    </button>
+    <button ng-click="cheatFilter()">Cheat
+    </button>
+
+    <div ng-show="error">
+        <h2>Failed to get the cards!</h2>
+        <pre>HTTP status: {{error.status}}</pre>
+    </div>
+    <loader ng-hide="loaded || error"></loader>
+
+    <ui-view></ui-view>
+
+</div>

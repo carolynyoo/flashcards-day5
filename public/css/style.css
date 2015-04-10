@@ -68,6 +68,7 @@ button {
     color: red; }
 
 #statistics {
+  text-align: center;
   padding: 40px; }
   #statistics:before, #statistics:after {
     content: " ";
@@ -77,7 +78,7 @@ button {
   #statistics:after {
     clear: both; }
   #statistics #scoreboard {
-    float: right;
+    width: 400px;
     margin: 0 auto; }
     #statistics #scoreboard h3 {
       margin-right: 40px;

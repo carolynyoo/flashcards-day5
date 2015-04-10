@@ -2,3 +2,12 @@
 	border: 2px solid black !important;
 	background: #eee;
 }
+.nav-main {
+	width: 800px;
+	margin: 20px auto;
+}
+.nav-main li {
+	display: inline-block;
+	margin: 0 20px;
+	padding: 6px 13px;
+}
