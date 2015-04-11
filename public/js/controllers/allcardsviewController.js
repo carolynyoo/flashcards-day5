@@ -1,3 +1,3 @@
-app.controller('allCardsViewController', function($scope, $stateParams, allCards) {
+app.controller('allCardsViewController', function($scope, allCards) {
 	$scope.flashCards = allCards;
 })

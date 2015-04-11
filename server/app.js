@@ -28,3 +28,7 @@ app.get('/cards', function (req, res) {
     });
 
 });
+
+app.get('/*', function (req, res) {
+  res.sendFile()
+})

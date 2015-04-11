@@ -1,3 +1,3 @@
-app.controller('CardViewController', function($scope, $stateParams, cardsInCategory) {
+app.controller('CardViewController', function($scope, cardsInCategory) {
 	$scope.flashCards = cardsInCategory;
 })
