@@ -1,10 +1,9 @@
 <div>
-    <button ng-click="getAll()" ng-class="{ active: chosenCategory === 'All' }">All Categories</button>
+    <button ui-sref="home.all" ui-sref-active="active">All Categories</button>
 
-    <button 
-            ng-repeat="category in categories"
-            ng-click="getCategory(category)"
-            ng-class="{ active: chosenCategory === category }">
+    <button ui-sref="home.category({category: category})"
+            ui-sref-active="active"
+            ng-repeat="category in categories">
         {{ category }}
     </button>
     <button ng-click="cheatFilter()">Cheat
@@ -16,6 +15,6 @@
     </div>
     <loader ng-hide="loaded || error"></loader>
 
-    <ui-view></ui-view>
+    <ui-view><div class="welcome"><h1>Choose your category!</h1></div></ui-view>
 
 </div>

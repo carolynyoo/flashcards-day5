@@ -15,6 +15,10 @@ button {
   button.active {
     background: gainsboro; }
 
+.welcome {
+  padding-top: 50px;
+}
+
 .flash-card {
   position: relative;
   width: 60%;
